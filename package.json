@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/knackofabhinav/universetube-server.git"
+    "url": "git+https://github.com/knackofabhinav/unitube-server.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/knackofabhinav/universetube-server/issues"
+    "url": "https://github.com/knackofabhinav/unitube-server/issues"
   },
-  "homepage": "https://github.com/knackofabhinav/universetube-server#readme",
+  "homepage": "https://github.com/knackofabhinav/unitube-server#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
