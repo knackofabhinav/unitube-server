@@ -18,7 +18,10 @@ router
       await newPlaylist.save();
       user.playlists.push(newPlaylist._id);
       await user.save();
-      const updatedUser = await User.findById(userId).populate("playlists");
+      const updatedUser = await User.findById(userId).populate({
+        path: "playlists",
+        populate: { path: "videos" },
+      });
       res.json({ success: true, playlists: updatedUser.playlists });
     } catch (err) {
       console.log(err);
@@ -56,7 +59,7 @@ router
       await Playlist.findOneAndDelete(playlistId);
       const user = await User.findById(userId);
       user.playlists.remove({ _id: playlistId });
-      user.save();
+      await user.save();
       const updatedUser = await User.findById(user).populate({
         path: "playlists",
         populate: { path: "videos" },
